@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Cryptographic Challenge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    @keyframes matrix-rain {
+      0% { transform: translateY(-100%); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(100%); opacity: 0; }
+    }
+
+    .matrix-effect {
+      animation: matrix-rain 8s linear infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.6); }
+    }
+
+    .glow-green {
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    .evidence-card {
+      transition: all 0.3s ease;
+    }
+
+    .evidence-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+    }
+
+    .monospace {
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .terminal-text {
+      color: #22c55e;
+      text-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="w-full h-full bg-gradient-to-br from-gray-950 via-slate-900 to-gray-950">
+  <main class="w-full min-h-full">
+   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12"><!-- Header -->
+    <header class="text-center mb-8 sm:mb-10">
+     <div class="text-4xl sm:text-5xl mb-3">
+      🔐
+     </div>
+     <h1 id="main-title" class="text-3xl sm:text-5xl font-bold text-green-400 mb-3 terminal-text">Happy Birthday, Abhinav!</h1>
+     <p id="subtitle" class="text-base sm:text-lg text-green-300/80 max-w-2xl mx-auto">Your gift is encrypted. Decrypt the identity of a mysterious figure who changed the world.</p>
+     <div class="w-32 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto mt-4 rounded-full"></div>
+    </header><!-- Birthday Message -->
+    <section class="bg-slate-900/60 backdrop-blur-sm border border-green-500/30 rounded-2xl p-5 sm:p-8 mb-6 sm:mb-8 shadow-2xl glow-green">
+     <div class="flex flex-col sm:flex-row items-start gap-4">
+      <div class="text-3xl sm:text-4xl">
+       📜
+      </div>
+      <div class="flex-1">
+       <h2 class="text-xl sm:text-2xl font-semibold text-green-300 mb-3">Classified Mission Brief</h2>
+       <p id="birthday-message" class="text-sm sm:text-base text-green-100/90 leading-relaxed">Happy birthday! I've put together a puzzle about a mysterious figure in tech history. Use the clues below to research and identify this person. Their true identity has never been confirmed. Good luck! 🕵️‍♂️</p>
+      </div>
+     </div>
+    </section><!-- Main Puzzle -->
+    <section class="bg-slate-900/60 backdrop-blur-sm border border-green-500/30 rounded-2xl p-5 sm:p-8 shadow-2xl">
+     <h2 id="puzzle-title" class="text-2xl sm:text-3xl font-bold text-green-300 mb-6 text-center terminal-text">🔍 CLASSIFIED: Identity Unknown</h2><!-- Case File Header -->
+     <div class="bg-gray-950/70 border border-green-400/40 rounded-xl p-4 sm:p-5 mb-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+       <h3 class="text-base sm:text-lg font-semibold text-green-300 monospace">FILE #2008-10-31</h3><span class="text-xs sm:text-sm text-green-400/80 monospace">CLEARANCE: TOP SECRET</span>
+      </div>
+      <p class="text-xs sm:text-sm text-green-100/80 leading-relaxed"><strong>Subject:</strong> Anonymous cryptographer who revolutionized digital currency<br><strong>Status:</strong> Identity unconfirmed | Last known activity: 2011<br><strong>Objective:</strong> Identify the pseudonym used by this individual</p>
+     </div><!-- Evidence Grid -->
+     <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6"><!-- Evidence 1: Encrypted Communication -->
+      <div class="evidence-card bg-gray-900/50 border border-green-400/40 rounded-xl p-4 sm:p-5">
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg bg-green-600 flex items-center justify-center text-white font-bold text-sm">
+         01
+        </div>
+        <div>
+         <h3 class="text-base sm:text-lg font-semibold text-green-300">Encrypted Signature</h3>
+         <p class="text-xs text-green-400/70">Email Archive Analysis</p>
+        </div>
+       </div>
+       <div class="bg-black/60 border border-green-500/30 rounded-lg p-3 sm:p-4 mb-3">
+        <div class="text-xs sm:text-sm text-green-400 monospace leading-relaxed">
+         <p class="mb-2">-----BEGIN PGP SIGNATURE-----</p>
+         <p class="text-green-300/60 text-xs mb-2">From: [REDACTED]@gmx.com</p>
+         <p class="text-green-300/60 text-xs mb-2">To: Cryptography Mailing List</p>
+         <p class="text-green-300/60 text-xs mb-2">Date: Oct 31, 2008</p>
+         <p class="mb-2">Subject: "Bitcoin P2P e-cash paper"</p>
+         <p class="text-green-300/80 text-xs">Signature: Member of cypherpunk movement</p>
+         <p class="mt-2">-----END PGP SIGNATURE-----</p>
+        </div>
+       </div>
+       <div class="bg-green-900/20 rounded-lg p-3 text-xs text-green-200/80">
+        <p class="font-semibold mb-1">🔍 Investigation Path:</p>
+        <p>• Search "Bitcoin announcement October 31 2008"</p>
+        <p>• Research "cryptography mailing list 2008"</p>
+        <p>• Look for "cypherpunk Bitcoin creator"</p>
+       </div>
+      </div><!-- Evidence 2: Forum Post -->
+      <div class="evidence-card bg-gray-900/50 border border-green-400/40 rounded-xl p-4 sm:p-5">
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg bg-green-600 flex items-center justify-center text-white font-bold text-sm">
+         02
+        </div>
+        <div>
+         <h3 class="text-base sm:text-lg font-semibold text-green-300">Forum Intelligence</h3>
+         <p class="text-xs text-green-400/70">P2P Foundation Archive</p>
+        </div>
+       </div>
+       <div class="bg-black/60 border border-green-500/30 rounded-lg p-3 sm:p-4 mb-3">
+        <div class="text-xs sm:text-sm text-green-300/90 monospace leading-relaxed">
+         <p class="text-green-400 mb-2">P2P Foundation Forum - Feb 11, 2009</p>
+         <p class="mb-2">"I've developed a new open source P2P e-cash system called Bitcoin. It's completely decentralized, with no central server or trusted parties."</p>
+         <p class="text-green-300/60 text-xs mt-2">Profile: Age 37 | Location: Japan</p>
+         <p class="text-green-300/60 text-xs">Posts: 539 | Joined: 2008</p>
+        </div>
+       </div>
+       <div class="bg-green-900/20 rounded-lg p-3 text-xs text-green-200/80">
+        <p class="font-semibold mb-1">🔍 Investigation Path:</p>
+        <p>• Search "Bitcoin P2P Foundation 2009"</p>
+        <p>• Research "Bitcoin creator forum posts"</p>
+        <p>• Look for "Bitcoin developer Japan profile"</p>
+       </div>
+      </div><!-- Evidence 3: Academic Paper -->
+      <div class="evidence-card bg-gray-900/50 border border-green-400/40 rounded-xl p-4 sm:p-5">
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg bg-green-600 flex items-center justify-center text-white font-bold text-sm">
+         03
+        </div>
+        <div>
+         <h3 class="text-base sm:text-lg font-semibold text-green-300">Research Document</h3>
+         <p class="text-xs text-green-400/70">Whitepaper Analysis</p>
+        </div>
+       </div>
+       <div class="bg-black/60 border border-green-500/30 rounded-lg p-3 sm:p-4 mb-3">
+        <div class="text-xs sm:text-sm text-green-300/90">
+         <p class="font-semibold mb-2 text-green-400">📄 "Bitcoin: A Peer-to-Peer Electronic Cash System"</p>
+         <p class="mb-2"><strong>Published:</strong> October 31, 2008</p>
+         <p class="mb-2"><strong>Author:</strong> [REDACTED]</p>
+         <p class="mb-2"><strong>Abstract:</strong> "A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution."</p>
+         <p class="text-green-300/70 text-xs">9 pages | 8 references | bitcoin.org/bitcoin.pdf</p>
+        </div>
+       </div>
+       <div class="bg-green-900/20 rounded-lg p-3 text-xs text-green-200/80">
+        <p class="font-semibold mb-1">🔍 Investigation Path:</p>
+        <p>• Search "Bitcoin whitepaper October 2008 author"</p>
+        <p>• Look for "Bitcoin.pdf original paper"</p>
+        <p>• Research "peer-to-peer electronic cash system"</p>
+       </div>
+      </div><!-- Evidence 4: Final Communication -->
+      <div class="evidence-card bg-gray-900/50 border border-green-400/40 rounded-xl p-4 sm:p-5">
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg bg-green-600 flex items-center justify-center text-white font-bold text-sm">
+         04
+        </div>
+        <div>
+         <h3 class="text-base sm:text-lg font-semibold text-green-300">Last Known Activity</h3>
+         <p class="text-xs text-green-400/70">Bitcoin Forum Archive</p>
+        </div>
+       </div>
+       <div class="bg-black/60 border border-green-500/30 rounded-lg p-3 sm:p-4 mb-3">
+        <div class="text-xs sm:text-sm text-green-300/90 monospace leading-relaxed">
+         <p class="text-green-400 mb-2">Bitcointalk.org - April 23, 2011</p>
+         <p class="mb-2">"I've moved on to other things. It's in good hands with Gavin and everyone."</p>
+         <p class="text-yellow-400/80 text-xs mt-3 mb-2">⚠️ FINAL MESSAGE</p>
+         <p class="text-green-300/70 text-xs">After this post, the creator disappeared completely. True identity never revealed. Estimated to hold ~1 million BTC.</p>
+        </div>
+       </div>
+       <div class="bg-green-900/20 rounded-lg p-3 text-xs text-green-200/80">
+        <p class="font-semibold mb-1">🔍 Investigation Path:</p>
+        <p>• Search "Bitcoin creator disappeared 2011"</p>
+        <p>• Research "Bitcoin founder last message"</p>
+        <p>• Look for "mysterious Bitcoin inventor"</p>
+       </div>
+      </div>
+     </div><!-- Analysis Section -->
+     <div class="bg-gradient-to-r from-green-900/40 to-emerald-900/40 border border-green-400/50 rounded-xl p-4 sm:p-6 mb-6">
+      <h3 class="text-base sm:text-lg font-semibold text-green-300 mb-3 flex items-center gap-2"><span>🎯</span> Intelligence Summary</h3>
+      <div class="space-y-2 text-xs sm:text-sm text-green-100/90">
+       <p>✓ Posted Bitcoin whitepaper to cryptography mailing list (Oct 31, 2008)</p>
+       <p>✓ Announced on P2P Foundation forum claiming to be from Japan, age 37</p>
+       <p>✓ Published 9-page academic paper on peer-to-peer electronic cash</p>
+       <p>✓ Disappeared in April 2011 after handing off project to others</p>
+       <p>✓ True identity remains one of tech's greatest mysteries</p>
+      </div>
+      <div class="mt-4 pt-4 border-t border-green-400/30">
+       <p class="text-xs sm:text-sm text-green-300 font-medium">🔐 <strong>Decryption Key:</strong> Enter the LAST NAME of the pseudonym (lowercase)</p>
+       <p class="text-xs text-green-400/70 mt-1">Hint: This person used a Japanese pseudonym. Format: lastname (one word)</p>
+      </div>
+     </div><!-- Password Form -->
+     <form id="osint-form" class="space-y-4">
+      <div><label for="password-input" class="block text-sm sm:text-base text-green-300 font-medium mb-2 monospace"> 🔑 ENTER DECRYPTION KEY: </label> <input type="text" id="password-input" name="password-input" class="w-full bg-black/70 border-2 border-green-500/50 rounded-lg px-4 py-3 text-sm sm:text-base text-green-400 focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/50 transition-all monospace terminal-text" placeholder="lastname (lowercase)..." autocomplete="off">
+      </div><button type="submit" id="submit-btn" class="w-full bg-green-600 hover:bg-green-500 active:bg-green-700 text-white font-bold py-3 px-6 rounded-lg text-sm sm:text-base transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-400/50 monospace"> 🔓 DECRYPT IDENTITY </button>
+     </form><!-- Feedback -->
+     <div id="feedback" class="mt-4 text-center font-medium text-sm sm:text-base monospace"></div><!-- Success Box -->
+     <div id="success-box" class="hidden mt-6 bg-gradient-to-r from-green-600/20 to-emerald-600/20 border-2 border-green-400/50 rounded-xl p-5 sm:p-6 text-center">
+      <div class="text-4xl sm:text-5xl mb-3">
+       🎉
+      </div>
+      <h3 class="text-xl sm:text-2xl font-bold text-green-300 mb-2 monospace">IDENTITY DECRYPTED!</h3>
+      <p class="text-sm sm:text-base text-green-100/90 mb-3 leading-relaxed">Excellent work! You've identified <strong>Satoshi Nakamoto</strong>, the mysterious creator of Bitcoin. On October 31, 2008, Nakamoto published the Bitcoin whitepaper and launched the cryptocurrency in January 2009. After working on the project until 2011, Nakamoto disappeared, leaving behind an estimated 1 million BTC (worth billions today). To this day, nobody knows who Satoshi Nakamoto really is - it could be one person or a group. This remains one of the greatest mysteries in technology! 🔐₿</p>
+      <div class="mt-4 pt-4 border-t border-green-400/30">
+       <p class="text-xs sm:text-sm text-green-200/80 mb-3">Your real birthday surprise is waiting... 🎁</p><button id="surprise-btn" class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-bold py-3 px-6 rounded-lg text-sm transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-400/50"> 🎉 Open Your Birthday Surprise </button>
+      </div>
+     </div>
+    </section><!-- Research Tips -->
+    <section class="mt-6 bg-slate-900/40 border border-green-500/20 rounded-xl p-4 sm:p-5"><button id="tips-toggle" class="w-full flex items-center justify-between text-sm sm:text-base text-green-300 font-medium hover:text-green-200 transition-colors focus:outline-none monospace"> <span>💡 INVESTIGATION PROTOCOLS</span> <span id="tips-arrow" class="transform transition-transform">▼</span> </button>
+     <div id="tips-content" class="hidden mt-4 space-y-2 text-xs sm:text-sm text-green-100/70">
+      <p>• <strong>Start here:</strong> Search "Bitcoin whitepaper October 2008" to find the original paper</p>
+      <p>• <strong>Key resource:</strong> Bitcoin.org has the original whitepaper with author name</p>
+      <p>• <strong>Wikipedia:</strong> "Bitcoin" and "History of Bitcoin" articles have detailed info</p>
+      <p>• <strong>Forum archives:</strong> Search "Bitcoin creator disappeared 2011" for the mystery</p>
+      <p>• <strong>Cypherpunk connection:</strong> Research the cypherpunk movement and early crypto advocates</p>
+      <p>• <strong>Remember:</strong> You need the LAST NAME of the pseudonym used</p>
+     </div>
+    </section><!-- Footer -->
+    <footer class="text-center mt-8 sm:mt-10 text-green-300/50 text-xs sm:text-sm monospace">
+     <p>Made with 💚 for your special day</p>
+     <p class="mt-1">Advanced OSINT Challenge | Cryptographic Mystery</p>
+    </footer>
+   </div>
+  </main>
+  <script>
+    // Configuration
+    const defaultConfig = {
+      main_title: "Happy Birthday, Abhinav!",
+      subtitle: "Your gift is encrypted. Decrypt the identity of a mysterious figure who changed the world.",
+      birthday_message: "Happy birthday! I've put together a puzzle about a mysterious figure in tech history. Use the clues below to research and identify this person. Their true identity has never been confirmed. Good luck! 🕵️‍♂️",
+      puzzle_title: "🔍 CLASSIFIED: Identity Unknown",
+      background_color: "#030712",
+      surface_color: "#0f172a",
+      text_color: "#d1fae5",
+      primary_action_color: "#16a34a",
+      secondary_action_color: "#22c55e"
+    };
+
+    // Answer: Satoshi Nakamoto (Bitcoin creator)
+    const CORRECT_PASSWORD = "nakamoto";
+
+    // DOM Elements
+    const mainTitleEl = document.getElementById("main-title");
+    const subtitleEl = document.getElementById("subtitle");
+    const birthdayMessageEl = document.getElementById("birthday-message");
+    const puzzleTitleEl = document.getElementById("puzzle-title");
+    const passwordInputEl = document.getElementById("password-input");
+    const submitBtnEl = document.getElementById("submit-btn");
+    const feedbackEl = document.getElementById("feedback");
+    const successBoxEl = document.getElementById("success-box");
+    const tipsToggleEl = document.getElementById("tips-toggle");
+    const tipsContentEl = document.getElementById("tips-content");
+    const tipsArrowEl = document.getElementById("tips-arrow");
+
+    // Apply config to UI
+    function applyConfigToUI(config) {
+      const cfg = { ...defaultConfig, ...config };
+      
+      mainTitleEl.textContent = cfg.main_title;
+      subtitleEl.textContent = cfg.subtitle;
+      birthdayMessageEl.textContent = cfg.birthday_message;
+      puzzleTitleEl.textContent = cfg.puzzle_title;
+
+      submitBtnEl.style.backgroundColor = cfg.primary_action_color;
+    }
+
+    // Element SDK Init
+    async function initElementSdk() {
+      if (!window.elementSdk) {
+        applyConfigToUI(defaultConfig);
+        return;
+      }
+
+      const element = {
+        defaultConfig: defaultConfig,
+        onConfigChange: async (config) => {
+          applyConfigToUI(config);
+        },
+        mapToCapabilities: (config) => {
+          const cfg = { ...defaultConfig, ...config };
+          return {
+            recolorables: [
+              {
+                get: () => cfg.background_color,
+                set: (value) => {
+                  window.elementSdk.setConfig({ background_color: value });
+                }
+              },
+              {
+                get: () => cfg.surface_color,
+                set: (value) => {
+                  window.elementSdk.setConfig({ surface_color: value });
+                }
+              },
+              {
+                get: () => cfg.text_color,
+                set: (value) => {
+                  window.elementSdk.setConfig({ text_color: value });
+                }
+              },
+              {
+                get: () => cfg.primary_action_color,
+                set: (value) => {
+                  window.elementSdk.setConfig({ primary_action_color: value });
+                }
+              },
+              {
+                get: () => cfg.secondary_action_color,
+                set: (value) => {
+                  window.elementSdk.setConfig({ secondary_action_color: value });
+                }
+              }
+            ],
+            borderables: [],
+            fontEditable: undefined,
+            fontSizeable: undefined
+          };
+        },
+        mapToEditPanelValues: (config) => {
+          const cfg = { ...defaultConfig, ...config };
+          return new Map([
+            ["main_title", cfg.main_title],
+            ["subtitle", cfg.subtitle],
+            ["birthday_message", cfg.birthday_message],
+            ["puzzle_title", cfg.puzzle_title]
+          ]);
+        }
+      };
+
+      window.elementSdk.init(element);
+    }
+
+    // Tips toggle
+    tipsToggleEl.addEventListener("click", function() {
+      const isHidden = tipsContentEl.classList.contains("hidden");
+      if (isHidden) {
+        tipsContentEl.classList.remove("hidden");
+        tipsArrowEl.style.transform = "rotate(180deg)";
+      } else {
+        tipsContentEl.classList.add("hidden");
+        tipsArrowEl.style.transform = "rotate(0deg)";
+      }
+    });
+
+    // Form submission
+    document.getElementById("osint-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const userAnswer = passwordInputEl.value.trim().toLowerCase();
+      
+      feedbackEl.textContent = "";
+      feedbackEl.className = "mt-4 text-center font-medium text-sm sm:text-base monospace";
+      successBoxEl.classList.add("hidden");
+
+      if (!userAnswer) {
+        feedbackEl.textContent = "⚠️ DECRYPTION KEY REQUIRED";
+        feedbackEl.classList.add("text-green-300");
+        return;
+      }
+
+      if (userAnswer === CORRECT_PASSWORD) {
+        feedbackEl.textContent = "✅ ACCESS GRANTED";
+        feedbackEl.classList.add("text-green-300", "text-lg");
+        successBoxEl.classList.remove("hidden");
+        passwordInputEl.disabled = true;
+        submitBtnEl.disabled = true;
+        submitBtnEl.textContent = "✓ DECRYPTED";
+        submitBtnEl.classList.remove("hover:bg-green-500");
+        submitBtnEl.classList.add("bg-emerald-600");
+      } else {
+        feedbackEl.textContent = "    ACCESS DENIED - INVALID KEY";
+        feedbackEl.classList.add("text-yellow-300");
+        
+        // Give contextual hints
+        if (userAnswer.includes("satoshi") || userAnswer === "satoshi") {
+          const hintEl = document.createElement("p");
+          hintEl.className = "text-xs text-green-300/80 mt-2";
+          hintEl.textContent = "⚠️ HINT: You need the LAST name only, not the first name.";
+          feedbackEl.appendChild(hintEl);
+        } else if (userAnswer.includes("bitcoin") || userAnswer.includes("btc")) {
+          const hintEl = document.createElement("p");
+          hintEl.className = "text-xs text-green-300/80 mt-2";
+          hintEl.textContent = "⚠️ HINT: Not the currency name - the creator's pseudonym.";
+          feedbackEl.appendChild(hintEl);
+        } else if (userAnswer.length > 0) {
+          const hintEl = document.createElement("p");
+          hintEl.className = "text-xs text-green-300/80 mt-2";
+          hintEl.textContent = "⚠️ HINT: Research the Bitcoin whitepaper author from October 2008.";
+          feedbackEl.appendChild(hintEl);
+        }
+        
+        passwordInputEl.value = "";
+        passwordInputEl.focus();
+      }
+    });
+
+    // Surprise button handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const surpriseBtn = document.getElementById('surprise-btn');
+      if (surpriseBtn) {
+        surpriseBtn.addEventListener('click', function() {
+          window.open('https://dionysus887.github.io/happy-birthday-my-love/', '_blank', 'noopener,noreferrer');
+        });
+      }
+    });
+
+    // Initialize
+    initElementSdk();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a90c944301391ac',t:'MTc2NDkwODc5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
